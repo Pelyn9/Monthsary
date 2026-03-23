@@ -1,0 +1,31 @@
+function RevealCard({ card }) {
+  function handlePointerMove(event) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+
+    event.currentTarget.style.setProperty("--pointer-x", `${x}px`);
+    event.currentTarget.style.setProperty("--pointer-y", `${y}px`);
+  }
+
+  return (
+    <article className="cursor-reveal-card" onPointerMove={handlePointerMove}>
+      <div className="cursor-reveal-card__shine" />
+      <div className="cursor-reveal-card__content">
+        <p className="cursor-reveal-card__subtitle">{card.subtitle}</p>
+        <h3>{card.title}</h3>
+        <p>{card.detail}</p>
+      </div>
+    </article>
+  );
+}
+
+export function CursorRevealGrid({ cards }) {
+  return (
+    <div className="cursor-reveal-grid">
+      {cards.map((card) => (
+        <RevealCard key={card.title} card={card} />
+      ))}
+    </div>
+  );
+}
