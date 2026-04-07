@@ -16,6 +16,124 @@ function useOutsideClick(ref, onOutsideClick) {
   }, [onOutsideClick, ref]);
 }
 
+function CassettePlayer({ audio, storyTitle }) {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const source = audio?.src?.trim();
+  const shouldAutoPlay = audio?.autoPlay !== false;
+
+  useEffect(() => {
+    const node = audioRef.current;
+
+    if (!node || !source) {
+      return undefined;
+    }
+
+    node.currentTime = 0;
+    setHasError(false);
+
+    if (!shouldAutoPlay) {
+      return () => {
+        node.pause();
+        node.currentTime = 0;
+      };
+    }
+
+    const playPromise = node.play();
+
+    if (playPromise?.catch) {
+      playPromise.catch(() => {
+        setIsPlaying(!node.paused);
+      });
+    }
+
+    return () => {
+      node.pause();
+      node.currentTime = 0;
+    };
+  }, [shouldAutoPlay, source]);
+
+  if (!source) {
+    return null;
+  }
+
+  function togglePlayback() {
+    const node = audioRef.current;
+
+    if (!node) {
+      return;
+    }
+
+    if (node.paused) {
+      const playPromise = node.play();
+
+      if (playPromise?.catch) {
+        playPromise.catch(() => {
+          setHasError(true);
+        });
+      }
+
+      return;
+    }
+
+    node.pause();
+  }
+
+  return (
+    <section
+      className={`cassette-player${isPlaying ? " is-playing" : ""}${hasError ? " has-error" : ""}`}
+      aria-label={`Music player for ${storyTitle}`}
+    >
+      <div className="cassette-player__tape" aria-hidden="true">
+        <span className="cassette-player__top-strip" />
+        <span className="cassette-player__window" />
+        <span className="cassette-player__bridge" />
+        <span className="cassette-player__reel cassette-player__reel--left" />
+        <span className="cassette-player__reel cassette-player__reel--right" />
+      </div>
+
+      <div className="cassette-player__copy">
+        <p className="cassette-player__eyebrow">
+          {audio.label ?? "Cassette tape"}
+        </p>
+        <strong>{audio.title ?? storyTitle}</strong>
+        <p>
+          {hasError
+            ? "The audio file could not be played. Check the path in content.js."
+            : audio.note ?? "This chapter starts playing your song as soon as it opens."}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        className="cassette-player__toggle"
+        onClick={togglePlayback}
+      >
+        {isPlaying ? "Pause tape" : "Play tape"}
+      </button>
+
+      <audio
+        ref={audioRef}
+        src={source}
+        preload={audio?.preload ?? "metadata"}
+        autoPlay={shouldAutoPlay}
+        loop={audio?.loop ?? true}
+        onPlay={() => {
+          setIsPlaying(true);
+          setHasError(false);
+        }}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+        onError={() => {
+          setIsPlaying(false);
+          setHasError(true);
+        }}
+      />
+    </section>
+  );
+}
+
 export function ExpandableMemoryList({ cards }) {
   const [active, setActive] = useState(null);
   const dialogRef = useRef(null);
@@ -73,6 +191,10 @@ export function ExpandableMemoryList({ cards }) {
           <p className="expandable-modal__description">
             {active.card.description}
           </p>
+          <CassettePlayer
+            audio={active.card.audio}
+            storyTitle={active.card.title}
+          />
           <div className="expandable-modal__body">
             {active.card.content.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

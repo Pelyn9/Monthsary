@@ -1,3 +1,7 @@
+import bestPicture1 from "./images/bestpicture1.jpg";
+import bestPicture2 from "./images/bestpicture2.jpg";
+import bestPicture3 from "./images/bestpicture3.jpg";
+
 export const siteContent = {
   // Edit your names here.
   names: {
@@ -126,13 +130,27 @@ export const siteContent = {
   ],
 
   // Edit the stories below. Replace the image URLs and paragraphs with your own.
+  // To add music inside a chapter modal, add an `audio` object to any story:
+  // audio: {
+  //   src: "/music/your-song.mp3",
+  //   title: "Your Song",
+  //   label: "Cassette tape",
+  //   note: "Plays automatically when the chapter opens.",
+  //   loop: true,
+  // },
   expandableStories: [
     {
       title: "The first spark",
       description: "When everything started to feel different.",
-      src:
-        "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80",
+      src: bestPicture1,
       ctaText: "Open story",
+      audio: {
+        src: "",
+        title: "Your song title",
+        label: "Cassette tape",
+        note: "Put your music file in public/music, then set the path here.",
+        loop: true,
+      },
       content: [
         "Some people enter life quietly, then somehow change the whole atmosphere. That is how you felt to me. Gentle, glowing, impossible to ignore once my heart truly noticed you.",
         "I still think about how something so simple became something so important. It was not loud. It was not rushed. It just kept becoming more real, more beautiful, and more impossible to let go of.",
@@ -141,8 +159,7 @@ export const siteContent = {
     {
       title: "The comfort of us",
       description: "How you became my safest place.",
-      src:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+      src: bestPicture2,
       ctaText: "Read note",
       content: [
         "You became the person I wanted to tell everything to. The biggest dream. The smallest worry. The random thought in the middle of the night. That kind of comfort is rare, and I never want to take it lightly.",
@@ -152,8 +169,7 @@ export const siteContent = {
     {
       title: "The future I choose",
       description: "Why forever feels worth believing in.",
-      src:
-        "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
+      src: bestPicture3,
       ctaText: "See promise",
       content: [
         "When I think about the future, I do not just imagine milestones. I imagine your laugh in the kitchen, your hand in mine, your voice turning ordinary evenings into something I will always remember.",
