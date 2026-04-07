@@ -421,30 +421,27 @@ function App() {
 
         <SectionShell id="photos" className="section">
           <SectionHeading
-            eyebrow="Draggable Memories"
-            title="A photo pile you can move around."
-            description="This section is inspired by the draggable Aceternity card layout, but rewritten for this monthsary site and tuned for your own couple photos."
-            note="Edit the image URLs and captions in src/content.js."
+            eyebrow="Photo Page"
+            title="A little scrapbook wall for the moments I keep replaying."
+            description="Drag the memories around like printed photos on a table and let this part feel messy, warm, and real."
           />
           <DraggablePhotoPile items={siteContent.draggablePhotos} />
         </SectionShell>
 
         <SectionShell id="moments" className="section">
           <SectionHeading
-            eyebrow="Smooth Carousel"
-            title="Moments that glide instead of just sitting there."
-            description="A softer, smoother carousel section for romantic highlights, date memories, or future dream shots."
-            note="Edit the carouselSlides array in src/content.js."
+            eyebrow="Moment Page"
+            title="Dates, dreams, and little scenes I still linger on."
+            description="This part moves like the memories do for me, slowly and softly, never really leaving."
           />
           <SmoothCarousel slides={siteContent.carouselSlides} />
         </SectionShell>
 
         <SectionShell id="stories" className="section">
           <SectionHeading
-            eyebrow="Expandable Stories"
-            title="Tap a memory and open the full story."
-            description="This takes the expandable card idea and turns it into a more romantic memory list for your relationship."
-            note="Edit the expandableStories array in src/content.js."
+            eyebrow="Story Page"
+            title="The memories that deserve more than a single line."
+            description="Open each one and let it breathe a little, because the best parts of us were never tiny."
           />
           <ExpandableMemoryList cards={siteContent.expandableStories} />
         </SectionShell>
@@ -479,10 +476,9 @@ function App() {
 
         <SectionShell id="forever" className="section">
           <SectionHeading
-            eyebrow="Infinite Words"
-            title="Promises that keep moving, just like us."
-            description="A scrolling quote ribbon for vows, favorite lines, or tiny love notes that repeat around the page."
-            note="Edit the movingQuotes array in src/content.js."
+            eyebrow="Forever Page"
+            title="Promises I would still choose in every version of tomorrow."
+            description="A ribbon of words that keeps going, because what I feel for you does too."
           />
           <InfiniteQuoteRibbon items={siteContent.movingQuotes} />
         </SectionShell>

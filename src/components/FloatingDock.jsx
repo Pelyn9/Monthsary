@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { isValidElement, useEffect, useState } from "react";
 
 function DockIcon({ icon }) {
+  if (isValidElement(icon)) {
+    return icon;
+  }
+
   if (icon === "home") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -88,18 +92,21 @@ export function FloatingDock({ items }) {
 
   return (
     <nav className="floating-dock" aria-label="Section navigation">
-      {items.map((item) => (
-        <a
-          key={item.title}
-          href={item.href}
-          className={`floating-dock__item${activeHref === item.href ? " is-active" : ""}`}
-        >
-          <span className="floating-dock__icon">
-            <DockIcon icon={item.icon} />
-          </span>
-          <span className="floating-dock__label">{item.title}</span>
-        </a>
-      ))}
+      <div className="floating-dock__frame">
+        {items.map((item) => (
+          <a
+            key={item.title}
+            href={item.href}
+            className={`floating-dock__item${activeHref === item.href ? " is-active" : ""}`}
+            aria-current={activeHref === item.href ? "page" : undefined}
+          >
+            <span className="floating-dock__icon">
+              <DockIcon icon={item.icon} />
+            </span>
+            <span className="floating-dock__text">{item.title}</span>
+          </a>
+        ))}
+      </div>
     </nav>
   );
 }

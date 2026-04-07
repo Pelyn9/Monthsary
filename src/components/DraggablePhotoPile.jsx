@@ -54,8 +54,7 @@ export function DraggablePhotoPile({ items }) {
   return (
     <div className="draggable-pile">
       <p className="draggable-pile__hint">
-        Drag the cards around. Replace these sample images in
-        <code> src/content.js</code>.
+        A little pile of moments I always want close enough to touch.
       </p>
 
       <div className="draggable-pile__stage">
