@@ -1176,9 +1176,26 @@ body.has-tulip-cursor [role="button"] {
   display: grid;
   align-content: start;
   gap: 0.6rem;
-  overflow: hidden;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 1rem 1.2rem 1.2rem;
   font-size: 0.98rem;
+}
+
+.expandable-modal__content::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+.expandable-modal__content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.expandable-modal__content::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .expandable-modal__content h3 {
