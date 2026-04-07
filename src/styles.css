@@ -1013,6 +1013,9 @@ body.has-tulip-cursor [role="button"] {
 .expandable-modal {
   position: fixed;
   inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 2.6vw, 1.6rem);
   z-index: 40;
   pointer-events: none;
   opacity: 0;
@@ -1025,6 +1028,7 @@ body.has-tulip-cursor [role="button"] {
 }
 
 .expandable-modal__backdrop {
+  grid-area: 1 / 1;
   position: absolute;
   inset: 0;
   background: rgba(5, 0, 12, 0.66);
@@ -1032,11 +1036,16 @@ body.has-tulip-cursor [role="button"] {
 }
 
 .expandable-modal__card {
+  grid-area: 1 / 1;
   position: relative;
-  width: min(92vw, 48rem);
-  max-height: 90vh;
-  overflow: auto;
-  margin: 5vh auto 0;
+  display: grid;
+  grid-template-rows: clamp(5.5rem, 14svh, 8rem) minmax(0, 1fr);
+  width: min(82vw, 46rem);
+  max-width: calc(100vw - 2rem);
+  height: min(58svh, 27rem);
+  max-height: calc(100svh - 4rem);
+  overflow: hidden;
+  margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 2rem;
   background: linear-gradient(180deg, rgba(40, 18, 65, 0.98), rgba(26, 11, 42, 0.98));
@@ -1048,6 +1057,7 @@ body.has-tulip-cursor [role="button"] {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 1;
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 999px;
@@ -1057,29 +1067,43 @@ body.has-tulip-cursor [role="button"] {
 
 .expandable-modal__image {
   width: 100%;
-  height: 20rem;
+  height: 100%;
   object-fit: cover;
 }
 
 .expandable-modal__content {
-  padding: 1.4rem 1.4rem 1.6rem;
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  overflow: hidden;
+  padding: 1rem 1.2rem 1.2rem;
+  font-size: 0.98rem;
 }
 
 .expandable-modal__content h3 {
-  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  margin: 0;
+  max-width: 9ch;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
   line-height: 0.96;
 }
 
 .expandable-modal__description {
-  margin: 0.55rem 0 0;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .expandable-modal__body {
-  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.1rem;
+}
+
+.expandable-modal__body p {
+  line-height: 1.6;
 }
 
 .expandable-modal__body p + p {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .letters-section {
@@ -1402,7 +1426,21 @@ body.has-tulip-cursor [role="button"] {
 
   .expandable-modal__card {
     width: calc(100% - 1rem);
-    margin-top: 1rem;
+    margin: 0;
+    grid-template-rows: clamp(4.25rem, 11svh, 6rem) minmax(0, 1fr);
+    height: min(52svh, 23rem);
+    max-height: calc(100svh - 2rem);
+  }
+
+  .expandable-modal__content {
+    gap: 0.55rem;
+    padding: 0.9rem 0.95rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .expandable-modal__content h3 {
+    max-width: none;
+    font-size: clamp(1.45rem, 7vw, 2rem);
   }
 
   .floating-dock {
