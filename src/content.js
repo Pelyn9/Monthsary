@@ -168,7 +168,7 @@ export const siteContent = {
       title: "Your smile",
       subtitle: "The one that undoes my whole day in the best way.",
       detail:
-        "When you smile, even my tiredest moments feel lighter. That is not a small thing. That is magic.",
+        "When you smile, even my most tired moments feel lighter. That is not a small thing. That is magic.",
     },
     {
       title: "Your voice",

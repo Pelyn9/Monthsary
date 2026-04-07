@@ -2,13 +2,22 @@ import { useMemo, useState } from "react";
 
 export function LetterStack({ cards }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const totalCards = cards?.length ?? 0;
 
   const stack = useMemo(() => {
+    if (!totalCards) {
+      return [];
+    }
+
     return cards.map((_, index) => cards[(activeIndex + index) % cards.length]);
-  }, [activeIndex, cards]);
+  }, [activeIndex, cards, totalCards]);
+
+  if (!totalCards) {
+    return null;
+  }
 
   function nextCard() {
-    setActiveIndex((index) => (index + 1) % cards.length);
+    setActiveIndex((index) => (index + 1) % totalCards);
   }
 
   function handleKeyDown(event) {
@@ -26,6 +35,7 @@ export function LetterStack({ cards }) {
         onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
+        aria-label="Show the next letter"
       >
         {stack
           .slice(0, 3)
@@ -47,7 +57,11 @@ export function LetterStack({ cards }) {
       </div>
 
       <button type="button" className="letter-stack__button" onClick={nextCard}>
-        Next letter
+        <span>Next note</span>
+        <span className="letter-stack__count">
+          {String(activeIndex + 1).padStart(2, "0")} /{" "}
+          {String(totalCards).padStart(2, "0")}
+        </span>
       </button>
     </div>
   );

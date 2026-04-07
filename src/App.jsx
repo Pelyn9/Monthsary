@@ -451,21 +451,27 @@ function App() {
 
         <SectionShell id="letters" className="section">
           <SectionHeading
-            eyebrow="Cursor Glow"
-            title="Hover your cursor and let the letters light up."
-            description="These hover cards replace the generic demo text with things you love about her and the future you want with her."
-            note="Edit the hoverLetters array in src/content.js."
+            eyebrow="Letters"
+            title="Soft notes, kept close."
+            description="Hover through a few things I love about you, then turn through the little letters one by one."
           />
 
           <div className="letters-section">
-            <CursorRevealGrid cards={siteContent.hoverLetters} />
             <div className="letters-section__stack">
-              <SectionHeading
-                eyebrow="Card Stack"
-                title="Click the letter stack to see the next note."
-                description="This section gives you a simple, romantic card stack that cycles through your little messages."
-                note="Edit the stackLetters array in src/content.js."
-              />
+              <div className="letters-section__copy" data-reveal>
+                <p className="letters-section__label">Cursor Glow</p>
+                <h3>Three little reasons I keep returning to you.</h3>
+                <p>Move slowly and let each note light up on its own.</p>
+              </div>
+              <CursorRevealGrid cards={siteContent.hoverLetters} />
+            </div>
+
+            <div className="letters-section__stack">
+              <div className="letters-section__copy" data-reveal>
+                <p className="letters-section__label">Card Stack</p>
+                <h3>Little letters for the quiet parts of us.</h3>
+                <p>Tap through the notes and let them take their turn.</p>
+              </div>
               <LetterStack cards={siteContent.stackLetters} />
             </div>
           </div>
