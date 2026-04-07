@@ -92,21 +92,19 @@ export function FloatingDock({ items }) {
 
   return (
     <nav className="floating-dock" aria-label="Section navigation">
-      <div className="floating-dock__frame">
-        {items.map((item) => (
-          <a
-            key={item.title}
-            href={item.href}
-            className={`floating-dock__item${activeHref === item.href ? " is-active" : ""}`}
-            aria-current={activeHref === item.href ? "page" : undefined}
-          >
-            <span className="floating-dock__icon">
-              <DockIcon icon={item.icon} />
-            </span>
-            <span className="floating-dock__text">{item.title}</span>
-          </a>
-        ))}
-      </div>
+      {items.map((item) => (
+        <a
+          key={item.title}
+          href={item.href}
+          className={`floating-dock__item${activeHref === item.href ? " is-active" : ""}`}
+          aria-current={activeHref === item.href ? "page" : undefined}
+        >
+          <span className="floating-dock__icon">
+            <DockIcon icon={item.icon} />
+          </span>
+          <span className="floating-dock__text">{item.title}</span>
+        </a>
+      ))}
     </nav>
   );
 }

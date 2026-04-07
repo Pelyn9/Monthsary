@@ -88,7 +88,7 @@ function SectionHeading({ eyebrow, title, description, note }) {
 function SectionShell({ id, className = "", children }) {
   return (
     <section className={`section-shell ${className}`.trim()} id={id} data-reveal>
-      <div className="section-shell__inner">{children}</div>
+      {children}
     </section>
   );
 }

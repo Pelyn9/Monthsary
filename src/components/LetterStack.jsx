@@ -50,9 +50,6 @@ export function LetterStack({ cards }) {
               >
                 <div className="letter-stack__meta">
                   <p className="letter-stack__name">{card.name}</p>
-                  <span className="letter-stack__serial">
-                    {String(card.id).padStart(2, "0")}
-                  </span>
                 </div>
                 <h3>{card.designation}</h3>
                 <p>{card.content}</p>
@@ -60,14 +57,6 @@ export function LetterStack({ cards }) {
             );
           })}
       </div>
-
-      <button type="button" className="letter-stack__button" onClick={nextCard}>
-        <span className="letter-stack__button-label">Next note</span>
-        <span className="letter-stack__count">
-          {String(activeIndex + 1).padStart(2, "0")} /{" "}
-          {String(totalCards).padStart(2, "0")}
-        </span>
-      </button>
     </div>
   );
 }
