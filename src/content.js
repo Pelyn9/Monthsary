@@ -130,7 +130,8 @@ export const siteContent = {
   ],
 
   // Edit the stories below. Replace the image URLs and paragraphs with your own.
-  // To add music inside a chapter modal, add an `audio` object to any story:
+  // To add music inside a chapter modal, add an `audio` object to any story.
+  // `src` can be a direct audio file path or a YouTube link.
   // audio: {
   //   src: "/music/your-song.mp3",
   //   title: "Your Song",
@@ -145,10 +146,11 @@ export const siteContent = {
       src: bestPicture1,
       ctaText: "Open story",
       audio: {
-        src: "",
-        title: "Your song title",
-        label: "Cassette tape",
-        note: "Put your music file in public/music, then set the path here.",
+        src: "https://www.youtube.com/watch?v=5HZ9qeFjhYk&list=RD5HZ9qeFjhYk&start_radio=1",
+        title: "Now playing",
+        label: "Soundtrack",
+        note: "This chapter opens with your first song automatically.",
+        autoPlay: true,
         loop: true,
       },
       content: [
@@ -161,6 +163,14 @@ export const siteContent = {
       description: "How you became my safest place.",
       src: bestPicture2,
       ctaText: "Read note",
+      audio: {
+        src: "https://www.youtube.com/watch?v=908773h7OAM&list=RD908773h7OAM&start_radio=1",
+        title: "Now playing",
+        label: "Soundtrack",
+        note: "This chapter opens with your second song automatically.",
+        autoPlay: true,
+        loop: true,
+      },
       content: [
         "You became the person I wanted to tell everything to. The biggest dream. The smallest worry. The random thought in the middle of the night. That kind of comfort is rare, and I never want to take it lightly.",
         "What I love most is not only the excitement of loving you. It is the peace. It is the way being near you makes my heart feel less noisy and more sure of itself.",
@@ -171,6 +181,14 @@ export const siteContent = {
       description: "Why forever feels worth believing in.",
       src: bestPicture3,
       ctaText: "See promise",
+      audio: {
+        src: "https://www.youtube.com/watch?v=GcgPbu5CxX8&list=RDGcgPbu5CxX8&start_radio=1",
+        title: "Now playing",
+        label: "Soundtrack",
+        note: "This chapter opens with your third song automatically.",
+        autoPlay: true,
+        loop: true,
+      },
       content: [
         "When I think about the future, I do not just imagine milestones. I imagine your laugh in the kitchen, your hand in mine, your voice turning ordinary evenings into something I will always remember.",
         "That is why this is more than a website. It is my little way of saying that I am still here, still grateful, and still serious about loving you well.",
