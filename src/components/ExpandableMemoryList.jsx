@@ -148,10 +148,12 @@ export function ExpandableMemoryList({ cards }) {
     }
 
     document.body.style.overflow = active ? "hidden" : "auto";
+    document.body.classList.toggle("has-story-modal-open", Boolean(active));
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = "auto";
+      document.body.classList.remove("has-story-modal-open");
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [active]);
@@ -178,11 +180,16 @@ export function ExpandableMemoryList({ cards }) {
         >
           {"\u00D7"}
         </button>
-        <img
-          src={active.card.src}
-          alt={active.card.title}
-          className="expandable-modal__image"
-        />
+        <div
+          className="expandable-modal__media"
+          style={{ "--modal-image": `url("${active.card.src}")` }}
+        >
+          <img
+            src={active.card.src}
+            alt={active.card.title}
+            className="expandable-modal__image"
+          />
+        </div>
         <div className="expandable-modal__content">
           <p className="expandable-modal__eyebrow">
             Chapter {String(active.index + 1).padStart(2, "0")}
