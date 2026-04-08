@@ -106,23 +106,61 @@ export const siteContent = {
   // Replace the image URLs and text below for the smooth carousel.
   carouselSlides: [
     {
-      title: "Moment 01",
-      caption: "Dates, dreams, and little scenes I still linger on.",
-      src: replayPhoto7,
+      title: "Will you marry me?",
+      caption: `Baby ko, I want to marry you and build a family with you.  
+Seryoso jud kaayo ko sa imoha, baby ko, di jud tika binuangan.  
+
+Every date nato, I always look at you,  
+Every dress, every moment, you always look amazing.  
+Baby ko, kaya maning makamot ko na jud ko sa imoha.  
+
+Im not your ideal man, nor the perfect man you are looking for,  
+But I will be a better man to treat you right,  
+Give you the Disney princess treatment, asawa ko.  
+
+I will never ever hurt you,  
+Because I love you every single atom.`,
+      src: replayPhoto7
     },
     {
-      title: "Moment 02",
-      caption: "This one stays soft in my mind no matter how much time passes.",
+      title: "I will never get tired of loving you.",
+      caption: "LLoving you is the best part of my life, My safe place, my home, my light. Loving you is heaven, resting on a cloud, Soft and gentle, peaceful, and proud. Your lips, sweet as candy, I long to taste, Every moment with you, nothing to waste. Your body, a pillow, warm in my embrace, Every hug with you feels like my space. Your smile, your laugh, a melody so true, Music I want to hear every day, just you. Forever and always, my heart beats for you, I love you, asawa ko, through and through.",
       src: replayPhoto8,
     },
     {
-      title: "Moment 03",
-      caption: "A memory that moves slowly and still never really leaves.",
-      src: replayPhoto9,
+        title: "The One",
+  caption: `You are the love of my life,
+The forever in my heart.
+Through every high and every strife,
+Our bond will never part.
+
+Ups and downs may come our way,
+Storms may try to shake us through,
+But my love for you will always stay,
+Strong, unchanging, pure, and true.
+
+Through every tear and every smile,
+Every moment, near or far,
+I’ll love you endlessly, all the while,
+My soulmate, my shining star.`,
+  src: replayPhoto9,
     },
     {
-      title: "Moment 04",
-      caption: "One more little scene I know I will keep coming back to.",
+      title: "God’s Perfect Gift",
+  caption: `The day God blessed me, He smiled on my life,
+Sending me you, my heart, my light.
+A perfect soul, so gentle, so true,
+Every moment I breathe, I’m grateful for you.
+
+Your laugh, your smile, your tender embrace,
+Turns ordinary days into a sacred space.
+Through every joy, through every test,
+With you, my love, I am truly blessed.
+
+No words could capture, no stars above,
+The depth of my heart, the gift of your love.
+Forever and always, I promise to lift,
+Our hearts together, God’s perfect gift.`,
       src: replayPhoto10,
     },
   ],

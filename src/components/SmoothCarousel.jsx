@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function SmoothCarousel({ slides }) {
   const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!slides.length) {
-      return undefined;
-    }
-
-    const timer = window.setInterval(() => {
-      setCurrent((index) => (index + 1) % slides.length);
-    }, 4200);
-
-    return () => window.clearInterval(timer);
-  }, [slides]);
 
   function goTo(index) {
     setCurrent(index);
@@ -55,9 +43,11 @@ export function SmoothCarousel({ slides }) {
                 <img src={slide.src} alt={slide.title} />
               </div>
               <div className="smooth-carousel__overlay">
-                <span className="smooth-carousel__eyebrow">Purple memory reel</span>
-                <h3>{slide.title}</h3>
-                <p>{slide.caption}</p>
+                <div className="smooth-carousel__copy">
+                  <span className="smooth-carousel__eyebrow"></span>
+                  <h3>{slide.title}</h3>
+                  <p>{slide.caption}</p>
+                </div>
               </div>
             </article>
           ))}

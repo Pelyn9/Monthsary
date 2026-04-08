@@ -457,7 +457,7 @@ function App() {
           <div className="letters-section">
             <div className="letters-section__stack">
               <div className="letters-section__copy" data-reveal>
-                <p className="letters-section__label">Cursor Glow</p>
+                <p className="letters-section__label"></p>
                 <h3>Three little reasons I keep returning to you.</h3>
                 <p>Move slowly and let each note light up on its own.</p>
               </div>
@@ -466,7 +466,7 @@ function App() {
 
             <div className="letters-section__stack">
               <div className="letters-section__copy" data-reveal>
-                <p className="letters-section__label">Card Stack</p>
+                <p className="letters-section__label"></p>
                 <h3>Little letters for the quiet parts of us.</h3>
                 <p>Tap through the notes and let them take their turn.</p>
               </div>
@@ -479,7 +479,7 @@ function App() {
           <SectionHeading
             eyebrow="Forever Page"
             title="Promises I would still choose in every version of tomorrow."
-            description="A ribbon of words that keeps going, because what I feel for you does too."
+            description=""
           />
           <InfiniteQuoteRibbon items={siteContent.movingQuotes} />
         </SectionShell>
