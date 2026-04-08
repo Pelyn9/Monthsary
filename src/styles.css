@@ -980,12 +980,28 @@ body.has-story-modal-open .floating-dock {
 
 .smooth-carousel__slide {
   position: relative;
+  display: grid;
   min-width: 100%;
   aspect-ratio: 16 / 7;
   overflow: hidden;
 }
 
-.smooth-carousel__slide img {
+.smooth-carousel__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.smooth-carousel__media::before,
+.smooth-carousel__media::after {
+  display: none;
+}
+
+.smooth-carousel__media img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1773,6 +1789,8 @@ body.has-story-modal-open .floating-dock {
 }
 
 #moments .smooth-carousel {
+  width: min(100%, 64rem);
+  gap: 1.15rem;
   background: none;
 }
 
@@ -1789,6 +1807,73 @@ body.has-story-modal-open .floating-dock {
   color: var(--pearl);
 }
 
+#moments .smooth-carousel__viewport {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(93, 53, 126, 0.72), rgba(28, 15, 44, 0.96));
+  box-shadow: 0 28px 64px rgba(18, 9, 29, 0.28);
+}
+
+#moments .smooth-carousel__slide {
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+  min-height: clamp(28rem, 48vw, 34rem);
+  padding: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.09), transparent 42%),
+    linear-gradient(180deg, rgba(87, 51, 117, 0.34), rgba(25, 13, 39, 0.9));
+}
+
+#moments .smooth-carousel__media {
+  background: rgba(17, 8, 28, 0.94);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#moments .smooth-carousel__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-image: var(--slide-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(34px) saturate(0.92);
+  transform: scale(1.08);
+  opacity: 0.94;
+}
+
+#moments .smooth-carousel__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(11, 2, 21, 0.12), rgba(11, 2, 21, 0.5)),
+    radial-gradient(circle at center, transparent 28%, rgba(11, 2, 21, 0.2));
+}
+
+#moments .smooth-carousel__media img {
+  width: calc(100% - 1.8rem);
+  height: calc(100% - 1.8rem);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 253, 0.92), rgba(228, 211, 241, 0.78)),
+    linear-gradient(150deg, rgba(154, 115, 195, 0.28), rgba(42, 24, 61, 0.42));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 22px 46px rgba(12, 5, 22, 0.28);
+}
+
 #moments .smooth-carousel__dots button {
   background: rgba(255, 255, 255, 0.26);
 }
@@ -1798,16 +1883,68 @@ body.has-story-modal-open .floating-dock {
 }
 
 #moments .smooth-carousel__overlay {
-  background: linear-gradient(
-    180deg,
-    transparent 10%,
-    rgba(61, 33, 84, 0.62) 66%,
-    rgba(45, 25, 65, 0.95) 100%
-  );
+  position: relative;
+  inset: auto;
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 0.5rem;
+  min-width: 0;
+  min-height: clamp(28rem, 48vw, 34rem);
+  padding: clamp(1.8rem, 3vw, 2.35rem) clamp(1.65rem, 3vw, 2.2rem);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgba(53, 29, 78, 0.7), rgba(34, 18, 52, 0.92)),
+    radial-gradient(circle at top right, rgba(255, 220, 240, 0.12), transparent 34%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+#moments .smooth-carousel__overlay h3 {
+  max-width: 6.2ch;
+  font-size: clamp(2.55rem, 4.8vw, 3.65rem);
+  line-height: 0.98;
+  text-align: left;
+  text-wrap: balance;
+}
+
+#moments .smooth-carousel__overlay p {
+  width: min(100%, 27ch);
+  margin-top: 0.55rem;
+  max-width: none;
+  font-size: clamp(1.02rem, 1.15vw, 1.16rem);
+  line-height: 1.82;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+}
+
+#moments .smooth-carousel__eyebrow {
+  margin-bottom: 0.7rem;
 }
 
 #stories .expandable-list__item {
   background: none;
+  grid-template-columns: clamp(8.5rem, 16vw, 11rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 1.45rem);
+}
+
+#stories .expandable-list__item img {
+  width: 100%;
+  height: clamp(10.5rem, 19vw, 14rem);
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    linear-gradient(150deg, rgba(121, 79, 161, 0.3), rgba(38, 20, 59, 0.72));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 34px rgba(16, 7, 27, 0.18);
 }
 
 #stories .expandable-list__meta span {
@@ -1820,9 +1957,45 @@ body.has-story-modal-open .floating-dock {
 }
 
 #stories .expandable-modal__card {
+  grid-template-columns: minmax(20rem, 26rem) minmax(0, 1fr);
+  width: min(94vw, 66rem);
   background:
     linear-gradient(180deg, rgba(114, 69, 150, 0.98), rgba(60, 34, 87, 0.98)),
     radial-gradient(circle at top right, rgba(255, 202, 233, 0.2), transparent 34%);
+}
+
+#stories .expandable-modal__media {
+  background: rgba(17, 8, 28, 0.94);
+}
+
+#stories .expandable-modal__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-image: var(--modal-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(34px) saturate(0.92);
+  transform: scale(1.08);
+  opacity: 0.94;
+}
+
+#stories .expandable-modal__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(11, 2, 21, 0.12), rgba(11, 2, 21, 0.54)),
+    radial-gradient(circle at center, transparent 28%, rgba(11, 2, 21, 0.24));
+}
+
+#stories .expandable-modal__image {
+  padding: clamp(1rem, 2vw, 1.35rem);
+  object-fit: contain;
+  object-position: center;
 }
 
 #letters .letters-section__stack {
@@ -2142,6 +2315,59 @@ body.has-story-modal-open .floating-dock {
   .expandable-modal__image {
     object-fit: contain;
   }
+
+  #stories .expandable-modal__card {
+    grid-template-columns: none;
+    grid-template-rows: clamp(14rem, 34svh, 19rem) minmax(0, 1fr);
+    width: min(calc(100% - 1.5rem), 42rem);
+    height: min(84svh, 39rem);
+  }
+
+  #moments .smooth-carousel {
+    width: min(100%, 36rem);
+  }
+
+  #moments .smooth-carousel__slide {
+    display: block;
+    aspect-ratio: 5 / 6.4;
+    min-height: auto;
+    padding: 0;
+  }
+
+  #moments .smooth-carousel__media {
+    height: 100%;
+    border-right: 0;
+  }
+
+  #moments .smooth-carousel__media img {
+    width: 100%;
+    height: 100%;
+    padding: 0.95rem 0.95rem 5.6rem;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  #moments .smooth-carousel__overlay {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    padding: 1rem;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(61, 33, 84, 0.04) 10%,
+      rgba(61, 33, 84, 0.22) 54%,
+      rgba(45, 25, 65, 0.92) 100%
+    );
+    box-shadow: none;
+  }
+
+  #moments .smooth-carousel__overlay h3 {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
 }
 
 @media (max-width: 760px) {
@@ -2433,6 +2659,19 @@ body.has-story-modal-open .floating-dock {
     align-self: flex-start;
   }
 
+  #stories .expandable-list__item img {
+    height: min(88vw, 23rem);
+    padding: 0.85rem;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #stories .expandable-modal__card {
+    grid-template-rows: clamp(14rem, 34svh, 18rem) minmax(0, 1fr);
+  }
+
   .floating-dock {
     top: auto;
     bottom: 0.85rem;
@@ -2551,6 +2790,23 @@ body.has-story-modal-open .floating-dock {
 
   .expandable-list__item img {
     height: 11.5rem;
+  }
+
+  #stories .expandable-list__item img {
+    height: min(96vw, 20rem);
+    padding: 0.75rem;
+  }
+
+  #stories .expandable-modal__card {
+    grid-template-rows: clamp(12.5rem, 30svh, 16rem) minmax(0, 1fr);
+  }
+
+  #stories .expandable-modal__image {
+    padding: 0.85rem;
+  }
+
+  #moments .smooth-carousel__media img {
+    padding: 0.8rem 0.8rem 5.2rem;
   }
 
   .cursor-reveal-grid {

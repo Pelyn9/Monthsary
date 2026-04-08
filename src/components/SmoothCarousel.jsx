@@ -48,7 +48,12 @@ export function SmoothCarousel({ slides }) {
         >
           {slides.map((slide) => (
             <article className="smooth-carousel__slide" key={slide.title}>
-              <img src={slide.src} alt={slide.title} />
+              <div
+                className="smooth-carousel__media"
+                style={{ "--slide-image": `url("${slide.src}")` }}
+              >
+                <img src={slide.src} alt={slide.title} />
+              </div>
               <div className="smooth-carousel__overlay">
                 <span className="smooth-carousel__eyebrow">Purple memory reel</span>
                 <h3>{slide.title}</h3>

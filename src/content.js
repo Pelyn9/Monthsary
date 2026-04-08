@@ -1,6 +1,16 @@
 import bestPicture1 from "./images/bestpicture1.jpg";
 import bestPicture2 from "./images/bestpicture2.jpg";
 import bestPicture3 from "./images/bestpicture3.jpg";
+import replayPhoto1 from "./images/image2/1.jpg";
+import replayPhoto2 from "./images/image2/2.jpg";
+import replayPhoto3 from "./images/image2/3.jpg";
+import replayPhoto4 from "./images/image2/4.jpg";
+import replayPhoto5 from "./images/image2/5.jpg";
+import replayPhoto6 from "./images/image2/6.jpg";
+import replayPhoto7 from "./images/image2/7.jpg";
+import replayPhoto8 from "./images/image2/8.jpg";
+import replayPhoto9 from "./images/image2/9.jpg";
+import replayPhoto10 from "./images/image2/10.jpg";
 
 export const siteContent = {
   // Edit your names here.
@@ -18,7 +28,7 @@ export const siteContent = {
     intro: "Welcome to",
     words: [
       "our love story",
-      "our tulip garden",
+      "our Futu",
       "our soft little world",
       "our forever season",
     ],
@@ -28,7 +38,7 @@ export const siteContent = {
     cardTitle: "You are the calm in every future I imagine.",
     cardText:
       "Every month with you still feels like a fresh reason to be grateful. You are my favorite person, my answered prayer, and the warmth I want to keep choosing every single day.",
-    badges: ["purple tulip mood", "editable love notes", "smooth interactions"],
+    badges: ["purple tulip mood"],
     sideQuote:
       "This whole page is my way of saying that loving you still feels beautiful, intentional, and worth celebrating out loud.",
   },
@@ -46,55 +56,49 @@ export const siteContent = {
   // Replace the image URLs below with your own couple photos if you want.
   draggablePhotos: [
     {
-      title: "Our Bloom",
-      caption: "Purple tulips and soft promises.",
-      image:
-        "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=900&q=80",
+      title: "Do our best",
+      caption: "The day I feel excited to get a job so that i want to mary you.",
+      image: replayPhoto1,
       left: "7%",
       top: "10%",
       rotate: "-9deg",
     },
     {
-      title: "Holding On",
-      caption: "The kind of closeness I never want to lose.",
-      image:
-        "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80",
+      title: "I want you forever",
+      caption: "You always make my heart warm and I will always take care of your heart.",
+      image: replayPhoto2,
       left: "24%",
       top: "36%",
       rotate: "-6deg",
     },
     {
-      title: "Golden Hour",
-      caption: "Evenings feel softer with you in them.",
-      image:
-        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=900&q=80",
+      title: "My Goddess",
+      caption: "Your smile and your beauty is so divine.",
+      image: replayPhoto3,
       left: "42%",
       top: "6%",
       rotate: "8deg",
     },
     {
-      title: "Tulip Dream",
-      caption: "Purple petals, purple skies, purple hearts.",
-      image:
-        "https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=900&q=80",
+      title: "Miles of love",
+      caption: "The kind of scene that never really fades away. Always make beautiful memories.",
+      image: replayPhoto4,
       left: "58%",
       top: "28%",
       rotate: "10deg",
     },
     {
-      title: "The Way Home",
-      caption: "Every road feels right if it leads to you.",
-      image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+      title: "Different schools, same hearts",
+      caption: "Pinned here like a photo I never want to misplace.",
+      image: replayPhoto5,
       left: "74%",
       top: "12%",
       rotate: "4deg",
     },
     {
-      title: "Letter Light",
-      caption: "Love notes and soft late-night thoughts.",
-      image:
-        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
+      title: "Every step with you",
+      caption: "I will be your forever PA. My Perfect Asawa",
+      image: replayPhoto6,
       left: "60%",
       top: "52%",
       rotate: "-8deg",
@@ -104,28 +108,24 @@ export const siteContent = {
   // Replace the image URLs and text below for the smooth carousel.
   carouselSlides: [
     {
-      title: "Purple Evenings",
-      caption: "The kind of date night I want again and again.",
-      src:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=80",
+      title: "Moment 01",
+      caption: "Dates, dreams, and little scenes I still linger on.",
+      src: replayPhoto7,
     },
     {
-      title: "Tulip Season",
-      caption: "A garden full of color would still remind me of you.",
-      src:
-        "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1400&q=80",
+      title: "Moment 02",
+      caption: "This one stays soft in my mind no matter how much time passes.",
+      src: replayPhoto8,
     },
     {
-      title: "Late Night Softness",
-      caption: "Quiet moments with you always feel cinematic.",
-      src:
-        "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=80",
+      title: "Moment 03",
+      caption: "A memory that moves slowly and still never really leaves.",
+      src: replayPhoto9,
     },
     {
-      title: "Future Home",
-      caption: "I keep dreaming about the life we still get to build.",
-      src:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1400&q=80",
+      title: "Moment 04",
+      caption: "One more little scene I know I will keep coming back to.",
+      src: replayPhoto10,
     },
   ],
 
