@@ -33,14 +33,12 @@ export const siteContent = {
       "our forever season",
     ],
     title: "Happy Monthsary, Asawa ko!",
-    description:
-      "I redesigned this page to feel more alive, more dreamy, and more like you. Purple light, tulips, floating photos, little letters, and all the soft things that make loving you feel beautiful.",
     cardTitle: "You are the calm in every future I imagine.",
     cardText:
       "Every month with you still feels like a fresh reason to be grateful. You are my favorite person, my answered prayer, and the warmth I want to keep choosing every single day.",
     badges: ["purple tulip mood"],
     sideQuote:
-      "This whole page is my way of saying that loving you still feels beautiful, intentional, and worth celebrating out loud.",
+      "This whole page is my way of saying that loving you is the best part of my life. It feels beautiful, intentional, and worth celebrating out loud.",
   },
 
   // Edit the floating dock navigation labels here.
@@ -73,7 +71,7 @@ export const siteContent = {
     },
     {
       title: "My Goddess",
-      caption: "Your smile and your beauty is so divine.",
+      caption: "Your smile and your beauty is so divine.Thats why I always want to be with you and make you happy and be mine forever.",
       image: replayPhoto3,
       left: "42%",
       top: "6%",

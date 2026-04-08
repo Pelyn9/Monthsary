@@ -379,7 +379,7 @@ function App() {
                 </article>
                 <article>
                   <strong>{stats.daysTogether}</strong>
-                  <span>days of choosing us</span>
+                  <span>days of together</span>
                 </article>
                 <article>
                   <strong>{stats.nextMonthsary}</strong>
@@ -399,7 +399,6 @@ function App() {
           </div>
 
           <aside className="hero__panel" data-reveal>
-            <p className="hero__panel-tag">Purple tulip edition</p>
             <h2>{siteContent.hero.cardTitle}</h2>
             <p>{siteContent.hero.cardText}</p>
 
