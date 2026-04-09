@@ -409,7 +409,7 @@ function App() {
             {stats ? (
               <div className="hero__panel-meta">
                 <span>Together since {stats.togetherSince}</span>
-                <span>My favorite person</span>
+                <span>My favorite person, Charlyn Mae F. Caputolan</span>
               </div>
             ) : null}
 
